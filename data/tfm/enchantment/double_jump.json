@@ -40,7 +40,7 @@
               "small_particle": {
                 "type": "minecraft:gust"
               },
-              "sound": "minecraft:entity.player.attack.weak",
+              "sound": "minecraft:entity.goat.long_jump",
               "knockback_multiplier": 1
             },
             {
