@@ -72,8 +72,8 @@
                   }
                 },
                 "movement": {
-                  "y": {
-                    "max": -3
+                  "fall_distance": {
+                    "max": 8
                   }
                 }
               }
