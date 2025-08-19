@@ -1,0 +1,316 @@
+{
+  "anvil_cost": 8,
+  "description": "tfm_wall_jump",
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "run_function",
+          "function": "tfm:wall_jump/check_airbone"
+        }
+      },
+      {
+        "effect": {
+          "type": "all_of",
+          "effects": [
+            {
+              "type": "explode",
+              "attribute_to_user": false,
+              "block_interaction": "none",
+              "large_particle": {
+                "type": "minecraft:gust_emitter_small"
+              },
+              "radius": 1.4,
+              "small_particle": {
+                "type": "minecraft:gust"
+              },
+              "sound": "minecraft:entity.player.attack.weak",
+              "knockback_multiplier": 1,
+              "offset": [
+                -0.3,
+                1.2,
+                0
+              ]
+            },
+            {
+              "type": "run_function",
+              "function": "tfm:wall_jump/post_jump_xm"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wall_jump_cd_xm": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_jump_pressed": {
+                  "min": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wallride_timer": {
+                  "max": 1
+                }
+              }
+            },
+            {
+              "condition": "location_check",
+              "offsetX": -1,
+              "predicate": {
+                "block": {
+                  "blocks": "#tfm:wallrun_block"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "all_of",
+          "effects": [
+            {
+              "type": "explode",
+              "attribute_to_user": false,
+              "block_interaction": "none",
+              "large_particle": {
+                "type": "minecraft:gust_emitter_small"
+              },
+              "radius": 1.4,
+              "small_particle": {
+                "type": "minecraft:gust"
+              },
+              "sound": "minecraft:entity.player.attack.weak",
+              "knockback_multiplier": 1,
+              "offset": [
+                0.3,
+                1.2,
+                0
+              ]
+            },
+            {
+              "type": "run_function",
+              "function": "tfm:wall_jump/post_jump_xp"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wall_jump_cd_xp": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_jump_pressed": {
+                  "min": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wallride_timer": {
+                  "max": 1
+                }
+              }
+            },
+            {
+              "condition": "location_check",
+              "offsetX": 1,
+              "predicate": {
+                "block": {
+                  "blocks": "#tfm:wallrun_block"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "all_of",
+          "effects": [
+            {
+              "type": "explode",
+              "attribute_to_user": false,
+              "block_interaction": "none",
+              "large_particle": {
+                "type": "minecraft:gust_emitter_small"
+              },
+              "radius": 1.4,
+              "small_particle": {
+                "type": "minecraft:gust"
+              },
+              "sound": "minecraft:entity.player.attack.weak",
+              "knockback_multiplier": 1,
+              "offset": [
+                0,
+                1.2,
+                -0.3
+              ]
+            },
+            {
+              "type": "run_function",
+              "function": "tfm:wall_jump/post_jump_zm"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wall_jump_cd_zm": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_jump_pressed": {
+                  "min": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wallride_timer": {
+                  "max": 1
+                }
+              }
+            },
+            {
+              "condition": "location_check",
+              "offsetZ": -1,
+              "predicate": {
+                "block": {
+                  "blocks": "#tfm:wallrun_block"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "all_of",
+          "effects": [
+            {
+              "type": "explode",
+              "attribute_to_user": false,
+              "block_interaction": "none",
+              "large_particle": {
+                "type": "minecraft:gust_emitter_small"
+              },
+              "radius": 1.4,
+              "small_particle": {
+                "type": "minecraft:gust"
+              },
+              "sound": "minecraft:entity.player.attack.weak",
+              "knockback_multiplier": 1,
+              "offset": [
+                0,
+                1.2,
+                0.3
+              ]
+            },
+            {
+              "type": "run_function",
+              "function": "tfm:wall_jump/post_jump_zp"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wall_jump_cd_zp": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_jump_pressed": {
+                  "min": 1,
+                  "max": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wallride_timer": {
+                  "max": 1
+                }
+              }
+            },
+            {
+              "condition": "location_check",
+              "offsetZ": 1,
+              "predicate": {
+                "block": {
+                  "blocks": "#tfm:wallrun_block"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 83,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 33,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 1
+}

@@ -1,0 +1,1 @@
+scoreboard players reset @s player_double_jump_cd

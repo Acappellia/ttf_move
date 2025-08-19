@@ -1,0 +1,29 @@
+{
+    "condition": "all_of",
+    "terms": [
+        {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "flags": {
+                    "is_on_ground": false
+                },
+                "type_specific": {
+                    "type": "player",
+                    "input": {
+                        "jump": false
+                    }
+                }
+            }
+        },
+        {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+                "player_wallride_timer": {
+                    "max": 1
+                }
+            }
+        }
+    ]
+}

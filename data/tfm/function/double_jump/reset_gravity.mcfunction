@@ -1,0 +1,1 @@
+attribute @s gravity modifier remove tfm:double_jump

@@ -1,0 +1,1 @@
+execute if predicate tfm:in_air run scoreboard players add @s player_double_jump_cd 1

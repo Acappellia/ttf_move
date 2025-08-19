@@ -1,0 +1,129 @@
+{
+  "anvil_cost": 8,
+  "description": "tfm_double_jump",
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "run_function",
+          "function": "tfm:double_jump/check_airbone"
+        },
+        "requirements": {
+          "condition": "inverted",
+          "term": {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+              "player_double_jump_cd": {
+                "max": -1
+              }
+            }
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "all_of",
+          "effects": [
+            {
+              "type": "run_function",
+              "function": "tfm:double_jump/pre_jump"
+            },
+            {
+              "type": "explode",
+              "attribute_to_user": false,
+              "block_interaction": "none",
+              "large_particle": {
+                "type": "minecraft:gust_emitter_small"
+              },
+              "radius": 0.1,
+              "small_particle": {
+                "type": "minecraft:gust"
+              },
+              "sound": "minecraft:entity.player.attack.weak",
+              "knockback_multiplier": 1
+            },
+            {
+              "type": "run_function",
+              "function": "tfm:double_jump/post_jump"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_double_jump_cd": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "input": {
+                    "jump": true
+                  }
+                },
+                "movement": {
+                  "y": {
+                    "max": -3
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "run_function",
+          "function": "tfm:double_jump/reset_scoreboards"
+        },
+        "requirements": {
+          "condition": "any_of",
+          "terms": [
+            {
+              "condition": "entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_ground": true
+                }
+              }
+            },
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_wallride_timer": {
+                  "max": 1
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 83,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 33,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 1
+}

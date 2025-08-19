@@ -1,0 +1,1 @@
+$attribute @s gravity modifier add tfm:double_jump $(sign)$(digit_1000).$(digit_100)$(digit_10)$(digit_1) add_value

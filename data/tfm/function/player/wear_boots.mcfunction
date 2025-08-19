@@ -1,0 +1,1 @@
+item replace entity @s armor.feet with music_disc_lava_chicken[equippable={asset_id:"elytra",slot:"feet"},enchantments={binding_curse:1,"tfm:double_jump":1,"tfm:wall_jump":1},tooltip_display={hidden_components:[enchantments]}]
