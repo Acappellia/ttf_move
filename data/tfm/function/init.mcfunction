@@ -15,12 +15,14 @@ scoreboard objectives add camera_hmove dummy
 scoreboard objectives add camera_vmove dummy
 scoreboard objectives add camera_rotation dummy
 
+scoreboard objectives add player_fall_distance dummy
 scoreboard objectives add player_land_timer custom:time_since_death
 scoreboard objectives add player_wallride_timer custom:time_since_death
 scoreboard objectives add player_double_jump_cd dummy
 scoreboard objectives add player_jump_pressed dummy
 scoreboard objectives add player_double_jump_gravity_reset_cd custom:time_since_death
 scoreboard objectives add player_double_jump_init_speed dummy
+scoreboard objectives add player_allow_jump dummy
 
 scoreboard objectives add player_wall_jump_cd_xm custom:time_since_death
 scoreboard objectives add player_wall_jump_cd_xp custom:time_since_death

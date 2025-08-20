@@ -21,7 +21,7 @@
             "entity": "this",
             "scores": {
                 "player_wallride_timer": {
-                    "min": 5
+                    "min": 2
                 }
             }
         }
