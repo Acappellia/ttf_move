@@ -1,5 +1,6 @@
-data merge entity @s {Tags:["camera_control"],item:{id:"apple",count:1,components:{item_model:"camera_tilt"}},Rotation:[180,0]}
+data merge entity @s {item:{id:"apple",count:1,components:{item_model:"camera_tilt"}},Rotation:[180,0]}
 
+tag @s add camera_control
 scoreboard players set @s camera_hmove 0
 scoreboard players set @s camera_vmove 0
 scoreboard players set @s camera_rotation 0

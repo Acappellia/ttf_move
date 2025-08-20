@@ -27,6 +27,43 @@
           "effects": [
             {
               "type": "run_function",
+              "function": "tfm:double_jump/check_valid"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_double_jump_cd": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type_specific": {
+                  "type": "player",
+                  "input": {
+                    "jump": true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "effect": {
+          "type": "all_of",
+          "effects": [
+            {
+              "type": "run_function",
               "function": "tfm:double_jump/pre_jump"
             },
             {
@@ -36,7 +73,7 @@
               "large_particle": {
                 "type": "minecraft:gust_emitter_small"
               },
-              "radius": 0.1,
+              "radius": 0.01,
               "small_particle": {
                 "type": "minecraft:gust"
               },
@@ -62,6 +99,15 @@
               }
             },
             {
+              "condition": "entity_scores",
+              "entity": "this",
+              "scores": {
+                "player_allow_double_jump": {
+                  "min": 1
+                }
+              }
+            },
+            {
               "condition": "entity_properties",
               "entity": "this",
               "predicate": {
@@ -73,7 +119,7 @@
                 },
                 "movement": {
                   "fall_distance": {
-                    "max": 8
+                    "max": 10
                   }
                 }
               }

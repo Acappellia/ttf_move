@@ -1,4 +1,4 @@
-kill @e[type=item_display,tag=camera_summoner]
+kill @e[type=item_display,tag=camera_control]
 
 scoreboard objectives remove player_id
 scoreboard objectives add player_id dummy
