@@ -10,4 +10,4 @@ playsound block.note_block.bell
 
 scoreboard players set @s player_checkpoint 1
 
-tellraw @s [{text:"[",color:"gray"},{text:"TFG",color:"blue"},{text:"] ",color:"gray"},{text:"Timer Start!",color:"yellow"}]
+tellraw @s [{text:"[",color:"gray"},{text:"TFP",color:"blue"},{text:"] ",color:"gray"},{text:"Timer Start!",color:"yellow"}]

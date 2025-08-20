@@ -1,0 +1,8 @@
+loot replace entity @s armor.head loot tfm:player_head
+$data modify storage tfm:leaderboard rank[$(rank)].name.text set from entity @s equipment.head.components."minecraft:profile".name
+$data modify storage tfm:leaderboard rank[$(rank)].player set from storage tfm:tmp player_info.id
+$execute if score @s player_timer_mil matches ..9 if score @s player_timer_sec matches ..9 run data modify storage tfm:leaderboard rank[$(rank)].display_time set value [{text:"$(time_min)",color:"yellow"},{text:":",color:"white"},{text:"0",color:"yellow"},{text:"$(time_sec)",color:"yellow"},{text:":",color:"white"},{text:"0",color:"yellow"},{text:"$(time_mil)",color:"yellow"}]
+$execute if score @s player_timer_mil matches ..9 if score @s player_timer_sec matches 10.. run data modify storage tfm:leaderboard rank[$(rank)].display_time set value [{text:"$(time_min)",color:"yellow"},{text:":",color:"white"},{text:"$(time_sec)",color:"yellow"},{text:":",color:"white"},{text:"0",color:"yellow"},{text:"$(time_mil)",color:"yellow"}]
+$execute if score @s player_timer_mil matches 10.. if score @s player_timer_sec matches ..9 run data modify storage tfm:leaderboard rank[$(rank)].display_time set value [{text:"$(time_min)",color:"yellow"},{text:":",color:"white"},{text:"0",color:"yellow"},{text:"$(time_sec)",color:"yellow"},{text:":",color:"white"},{text:"$(time_mil)",color:"yellow"}]
+$execute if score @s player_timer_mil matches 10.. if score @s player_timer_sec matches 10.. run data modify storage tfm:leaderboard rank[$(rank)].display_time set value [{text:"$(time_min)",color:"yellow"},{text:":",color:"white"},{text:"$(time_sec)",color:"yellow"},{text:":",color:"white"},{text:"$(time_mil)",color:"yellow"}]
+item replace entity @s armor.head with air

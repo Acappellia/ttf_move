@@ -40,7 +40,6 @@ scoreboard objectives add player_show_timer_cd custom:time_since_death
 scoreboard objectives add player_health health
 
 scoreboard objectives add player_timer_tick_scoreboard dummy "Timer"
-scoreboard objectives setdisplay sidebar player_timer_tick_scoreboard
 
 team add player
 team modify player friendlyFire false
