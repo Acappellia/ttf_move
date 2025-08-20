@@ -48,4 +48,4 @@ team modify player seeFriendlyInvisibles true
 team modify player deathMessageVisibility never
 
 schedule function tfm:slow_tick 1t replace
-schedule function tfm:init_words 40t replace
+schedule function tfm:init_words 160t replace
