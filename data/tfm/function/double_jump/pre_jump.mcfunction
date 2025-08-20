@@ -1,8 +1,8 @@
 #data modify storage tfm:tmp test set from entity @s Motion
 scoreboard players set @s player_double_jump_gravity_reset_cd -3
 
-kill @e[type=minecraft:text_display,tag=tmp_marker,distance=..50]
-summon text_display ~ ~ ~ {Tags:["tmp_marker"]}
+#kill @e[type=minecraft:text_display,tag=tmp_marker,distance=..50]
+#summon text_display ~ ~ ~ {Tags:["tmp_marker"]}
 
 #execute store result score @s player_double_jump_init_speed run data get entity @s Motion[1] 400
 #execute store result score #digit_1000 player_double_jump_init_speed run scoreboard players add @s player_double_jump_init_speed 100

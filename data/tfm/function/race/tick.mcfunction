@@ -1,3 +1,5 @@
+scoreboard players add @s player_timer_tick_scoreboard 1
+
 execute if score @s player_timer_tick matches 20.. run scoreboard players add @s player_timer_sec 1
 execute if score @s player_timer_tick matches 20.. run scoreboard players set @s player_timer_tick 0
 
